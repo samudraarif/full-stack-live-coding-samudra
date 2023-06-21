@@ -1,0 +1,13 @@
+SOAL SQL
+
+SELECT CONCAT('TM-',users.id) AS user_code, users.name,(CASE WHEN categories.code IS NULL THEN 'Uncategorized' ELSE categories.code END) AS category_code ,(CASE WHEN categories.name IS NULL THEN 'Uncategorized' ELSE categories.name END) AS category_name, DATE_FORMAT(users.created_at, "%M %d %Y") as created_at, (CASE WHEN users.status < 1 THEN 'Waiting' WHEN users.status = 1 THEN 'Approved' ELSE 'Rejected' END) AS text_status
+FROM users
+LEFT JOIN categories ON users.category=categories.code
+ORDER BY users.name ASC
+
+
+NOMOR 3
+1) Mengganti id="dynamic-link" menjadi class="dynamic-link".  karena dalam pemilihan elemen javascript menggunakan $(".dynamic-link").
+2) Mengubah responses menjadi response atau response menjadi response untuk menyamakan parameter yanga ada pada javascript
+3) Menambahkan .href setelah window.location 
+4) Mengganti tanda "" menjadi '' di dalam fungsi .html() 
